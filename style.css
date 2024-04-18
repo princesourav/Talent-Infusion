@@ -1,0 +1,733 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Praise&family=Rampart+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+:root {
+  --bg-color: #efeae3;
+  --primary-color: #00A9FF;
+  --dark: #000;
+  --light: #fff;
+  --accent-color: #f2f0f0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.container {
+  padding: 0 3vw;
+  overflow: hidden;
+}
+
+/* //////////--HEADER--///////// */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 3vw;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+header p {
+  display: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid var(--accent-color);
+  border-radius: 50px;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+  background-color: var(--dark);
+  left: 0;
+  bottom: -100%;
+  z-index: -1;
+}
+
+nav a:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+nav a:hover {
+  color: var(--light);
+}
+
+#full-scr {
+  height: 100vh;
+  width: 100%;
+  background-color: #00000070;
+  position: fixed;
+  z-index: 99;
+  top: -200%;
+  transition: all ease 0.5s;
+}
+
+#full-div1 {
+  height: 50%;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 30px;
+  padding-right: 4vw;
+}
+#full-div1 a {
+  font-size: 7vh;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 2vh 4vw;
+  }
+  nav {
+    display: none;
+  }
+  header p {
+    display: block;
+    padding: 3vw 5vw;
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    font-size: 4vw;
+    font-weight: 400;
+  }
+}
+
+/* //////////--HOME--///////// */
+
+#home {
+  margin-top: 5vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 0 4vw;
+  overflow: hidden;
+}
+#home .l-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4vh;
+}
+
+#home .l-side h1 {
+  font-size: 3vw;
+  line-height: 1.2;
+}
+#home .l-side h1 .Praise {
+  font-family: Praise;
+}
+#home .l-side h1 .Rampart {
+  font-family: Rampart One;
+}
+
+#home .r-side {
+  display: flex;
+  width: 50%;
+}
+
+#home .r-side .image {
+  display: flex;
+  align-items: center;
+}
+#home .r-side .image .blob-1 {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding-right: 0 !important;
+}
+#home .r-side .image .illustration {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.comic-button {
+  display: inline-block;
+  padding: 10px 50px;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: var(--dark);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button:active {
+  background-color: var(--dark);
+  color: var(--light);
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.comic-button:hover {
+  transform: translatey(10px);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #home {
+    flex-direction: column;
+  }
+  #home .l-side {
+    width: 100%;
+    z-index: 3;
+  }
+  #home .r-side {
+    width: 100%;
+  }
+  #home .l-side h1 {
+    font-size: 4vh;
+  }
+  .blob-1 {
+    width: 350px;
+  }
+  .illustration {
+    width: 410px;
+  }
+  #home .r-side .image .blob-1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding-right: 0 !important;
+  }
+  #home .r-side .image .illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+}
+
+/* //////////--ABOUT--///////// */
+
+#about {
+  margin-top: 5vh;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#about h2 {
+  text-align: center;
+  font-family: Rampart One;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+.capsule img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.capsule {
+  width: 800px;
+  padding: 30px;
+  border-radius: 30px;
+  margin: 15vh auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+  #about {
+    margin-top: 0;
+  }
+  #about h2 {
+    font-size: 4vh;
+  }
+  .capsule img {
+    width: 300px;
+  }
+  .capsule {
+    width: 320px;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+/* //////////--SERVICE--///////// */
+
+#services {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#services h2 {
+  text-align: center;
+  font-family: Rampart One;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+.card-h {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 8vh;
+  justify-items: center;
+  margin-bottom: 10vh;
+}
+
+@media (max-width: 600px) {
+  .card-h {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 8vh;
+    place-items: center;
+  }
+
+  #services h2 {
+    font-size: 4vh;
+  }
+}
+
+/* //////////--CARD--///////// */
+
+.card {
+  width: 280px;
+  height: 300px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translatey(-10px);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.card h3 {
+  margin-top: 5px;
+  max-width: 86%;
+}
+
+.card p {
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limiting to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.card-number {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--light);
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-family: "Rampart One";
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(100% - 10vw); /* Adjust card width */
+    height: 240px;
+    padding-top: 40px;
+  }
+  .card:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* //////////-POP UP--///////// */
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 600px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* //////////--WORK--///////// */
+
+#work {
+  margin-top: 5vh;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#work h2 {
+  text-align: center;
+  font-family: Rampart One;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+#elem-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 8vh;
+  justify-items: center;
+  margin-bottom: 10vh;
+}
+.elem {
+  width: 25vw;
+  height: 70vh;
+  border-radius: 30px;
+  background-color: #f2f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+}
+.elem:hover {
+  transform: translatey(-10px);
+  box-shadow: none;
+  cursor: pointer;
+}
+.w-text {
+  padding: 0 1vw;
+}
+
+.w-text h3 {
+  font-size: 1vw;
+}
+.w-text p {
+  margin-top: 5px;
+  font-size: 0.8vw;
+}
+.elem img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.line-2 {
+  width: 80%;
+  height: 2px;
+  background-color: #dbdbdb;
+  margin: 20px auto;
+}
+
+.elem h6 {
+  text-align: right;
+  padding-right: 1vw;
+}
+
+@media (max-width: 768px) {
+  #work h2 {
+    font-size: 4vh;
+  }
+  #elem-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .elem {
+    width: 80vw;
+    height: fit-content;
+  }
+  .w-text h3 {
+    font-size: 3vh;
+  }
+  .w-text p {
+    margin-top: 5px;
+    font-size: 1.2vh;
+  }
+  .w-text {
+    padding: 0 1vh;
+  }
+  .elem h6 {
+    padding: 1.5vh;
+  }
+}
+
+/* //////////--CONTACT--///////// */
+
+#contact {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#contact h2 {
+  text-align: center;
+  font-family: Rampart One;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+/* Contact Form Styles */
+.c-form {
+  max-width: 400px;
+  margin-top: 2vh;
+  z-index: 3;
+}
+
+.c-form form {
+  padding: 20px;
+}
+
+.c-form div {
+  margin-bottom: 20px;
+}
+
+.c-form input[type="text"],
+.c-form input[type="email"],
+.c-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid var(--dark);
+  font-size: 16px;
+  outline: none;
+  background-color: transparent;
+}
+
+.c-form textarea {
+  height: 50px;
+}
+
+.c-form button[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.comic-button-2 {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: var(--dark);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button-2:active {
+  background-color: var(--dark);
+  color: var(--light);
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.comic-button-2:hover {
+  transform: translatey(10px);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.arrange {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  #contact {
+    margin-top: 20vh;
+    padding: 0 4vw;
+    position: relative;
+  }
+  #contact h2 {
+    font-size: 4vh;
+  }
+  .arrange {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .Details {
+    margin-right: 3vw;
+    z-index: 2;
+  }
+  .blob-2 {
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    z-index: 1;
+  }
+  .social-icons {
+    margin-top: 2vh;
+  }
+}
+
+/* //////////--FOOTER--///////// */
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 3vw;
+}
+.part-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.part-1 p {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.part-2 {
+  margin: 3vh 0;
+}
+
+.part-2 h3 {
+  font-family: Poppins;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.part-2 p {
+  margin-top: 20px;
+  opacity: 80%;
+}
+
+.line {
+  display: block;
+  width: 85%;
+  height: 2px;
+  background-color: var(--accent-color);
+  opacity: 0.8;
+}
+
+.footer-hidden-content {
+  width: 100%;
+  background-color: var(--primary-color);
+}
+.footer-hidden-content p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+.hidden {
+  display: none;
+}
+.gap {
+  padding-top: 20px;
+  transition: all ease 0.4s;
+}
+
+.seo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 3vw;
+}
+
+.seo-content p {
+  padding: 0 !important;
+}
+
+#readMoreText {
+  cursor: pointer;
+  color: var(--light);
+}
+
+@media (max-width: 600px) {
+  #footer {
+    padding: 0 4vw;
+  }
+  .part-2 h3 {
+    white-space: nowrap;
+    gap: 10px;
+  }
+  .seo-content {
+    padding: 0 4vw;
+  }
+}
